@@ -1,1 +1,4 @@
 build_cc/
+*.o
+*.bin
+*.elf
