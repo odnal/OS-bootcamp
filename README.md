@@ -37,3 +37,12 @@ If installs went smooth you can set the path environment to the tools with ``sou
 
 BareBones is the next directory to explore.
 
+We will be taking a U-turn for what this repo will cover. I intend to use this repo as an exploratory
+repo for operating systems purposes. And the information I cover will likely be from different places
+and the focus point may shift. Therefore, I want to organize the repo by branches. Each branch name
+will indicate a starting point into some related os journey.
+
+For now the main branch contains a very barebones set up for getting a kernel up and running with
+visual output and text on screen. That is simple enough to where I will keep the main branch
+with such content. The other branches I will create will dive into more content on a deeper level.
+Explore the readmes in those branches to get a sense of direction for where the branch is headed.
