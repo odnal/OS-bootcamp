@@ -2,3 +2,6 @@ build_cc/
 *.o
 *.bin
 *.elf
+*.d
+*.list
+*.map
