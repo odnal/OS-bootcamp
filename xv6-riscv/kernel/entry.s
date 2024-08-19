@@ -5,12 +5,17 @@
 .section .text
 .globl _entry
 _entry:
-    # wait for interrupts (essentially a nop)
-    wfi
+    csrr a0, mhartid
+    bnez a0, loopforever
+    j _write_uart
 
 loopforever:
     j loopforever
     
+_write_uart:
+    li a0, 0x10000000 # virt uart0 base address
+    li a1, 0x55       # ascii 'U'
+    sb a1, (a0)
 
 
 
