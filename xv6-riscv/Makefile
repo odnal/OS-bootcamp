@@ -10,6 +10,12 @@ CFLAGS += -MD
 CFLAGS += -mcmodel=medany
 LDFLAGS = -z max-page-size=4096
 
+QEMU = qemu-system-riscv64
+QEMUOPTS = -machine virt -bios none -kernel $K/kernel.elf -m 128M -smp 4 -nographic
+
+qemu: $K/kernel.elf
+	$(QEMU) $(QEMUOPTS)
+
 all : $K/kernel.bin
 
 $K/kernel.bin: $(OBJS)
