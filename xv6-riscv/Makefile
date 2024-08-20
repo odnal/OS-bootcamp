@@ -40,6 +40,7 @@ $K/entry.o : $K/entry.S
 	$(CC)-as $K/entry.S -o $K/entry.o
 
 clean:
+	rm -rf kernel/*.d
 	rm -rf kernel/*.o
 	rm -rf kernel/*.elf
 	rm -rf kernel/*.bin
