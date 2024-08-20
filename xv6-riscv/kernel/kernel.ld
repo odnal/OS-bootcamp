@@ -11,4 +11,5 @@ SECTIONS
 {
     .text : { *(.text) } > ram
     .data : { *(.data) } > ram
+    .bss :  { *(.bss)  } > ram
 }
