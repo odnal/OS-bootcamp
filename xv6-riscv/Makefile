@@ -10,6 +10,8 @@ CFLAGS += -MD
 CFLAGS += -mcmodel=medany
 LDFLAGS = -z max-page-size=4096
 
+PATHS = $K/common
+
 QEMU = qemu-system-riscv64
 QEMUOPTS = -machine virt -bios none -kernel $K/kernel.elf -m 128M -smp 4 -nographic
 
@@ -34,7 +36,7 @@ $K/kernel.bin: $(OBJS)
 	$(CC)-objcopy $K/kernel.elf -O binary $K/kernel.bin
 
 $K/start.o : $K/start.c
-	$(CC)-gcc $(CFLAGS) $K/start.c -o $K/start.o
+	$(CC)-gcc $(CFLAGS) -I./$(PATHS) $K/start.c -o $K/start.o 
 
 $K/entry.o : $K/entry.S
 	$(CC)-as $K/entry.S -o $K/entry.o
