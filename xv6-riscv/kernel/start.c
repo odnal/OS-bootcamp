@@ -1,7 +1,7 @@
 #include "defs.h"
 #include "riscv.h"
 
-extern uint64_t _write_uart(void *val);
+void main();
 
 void start(void)
 {
@@ -9,7 +9,7 @@ void start(void)
     ra = r_mhartid();
 
     if (!ra) {
-        _write_uart("Hello, World\n");
+        main();
     }
 
     while (1);

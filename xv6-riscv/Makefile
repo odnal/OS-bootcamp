@@ -3,6 +3,9 @@ K=kernel
 OBJS = \
 	   $K/entry.o \
 	   $K/start.o \
+	   $K/main.o \
+	   $K/uart.o \
+	   $K/console.o \
 
 CC = riscv64-unknown-elf
 CFLAGS = -c -ggdb -gdwarf-2 -Wall -Werror -ffreestanding -nostartfiles -nostdlib
@@ -34,6 +37,15 @@ all : $K/kernel.bin
 $K/kernel.bin: $(OBJS)
 	$(CC)-ld $(LDFLAGS) -T $K/kernel.ld $(OBJS) -o $K/kernel.elf
 	$(CC)-objcopy $K/kernel.elf -O binary $K/kernel.bin
+
+$K/console.o : $K/console.c
+	$(CC)-gcc $(CFLAGS) -I./$(PATHS) $K/console.c -o $K/console.o 
+
+$K/uart.o : $K/uart.c
+	$(CC)-gcc $(CFLAGS) -I./$(PATHS) $K/uart.c -o $K/uart.o 
+
+$K/main.o : $K/main.c
+	$(CC)-gcc $(CFLAGS) -I./$(PATHS) $K/main.c -o $K/main.o 
 
 $K/start.o : $K/start.c
 	$(CC)-gcc $(CFLAGS) -I./$(PATHS) $K/start.c -o $K/start.o 
