@@ -2,7 +2,7 @@
 
 This will be a repo that will sort of extend from the xv6 riscv based OS
 from MIT. However, most things will not be copy/pasta I want to explore
-the xv6 OS for educational purposes and use forge my own path. So, however
+the xv6 OS for educational purposes and use it to forge my own path. So, however
 far I get the plan is for it to not really be an xv6 OS at all. It will be
 something UNIX like but with a twist on how I may naievly implement thigs.
 
@@ -14,7 +14,7 @@ extend from this one.
 
 # Environment Setup
 ### RISCV Cross Compiler Newlib Toolchain
-Follow the instructions here: [https://github.com/riscv-collab/riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
+Follow the instructions here to install a cross compiler: [https://github.com/riscv-collab/riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
 
 ### Qemu
 ```bash
